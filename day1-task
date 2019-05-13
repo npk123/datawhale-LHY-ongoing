@@ -51,31 +51,44 @@ ref： https://zhuanlan.zhihu.com/p/25241653
 
 8 写出梯度下降的代码
 
-// An highlighted block
+# -*- coding: utf-8 -*-
+
 import numpy as np
+import matplotlib.pyplot as plt
 
-np.random.seed(1)
-x = np.linspace(0,10,10)
-y_label = 2*x +3
 
-def gradient_descent(x, y ,w, b):
-    time = 0
-    n=0.0001
-    w = np.random.randn(1,1)
-	b = np.random.randn(1,1)
-    loss = np.sum((y - (w*x + b))**2)
-    while(loss>0.01)or(time<10000):
-        graident_w = np.sum((y - (w*x + b))*(x))
-        graident_b = np.sum(y - (w*x + b))
-        w = w - n*graident_w
-        b = b - n*graident_b
-        loss = np.sum((y - (w*x + b))**2)
-        print(loss)
-    return w, b
-    
-w_u, b_u = gradient_descent(x, y_label, w, b)
+def f(x):
+    return np.power(x, 2)
 
-ref：https://blog.csdn.net/Jdrops00/article/details/90178511
+def d_f_1(x):
+    return 2.0 * x
+
+def d_f_2(f, x, delta=1e-4):
+    return (f(x+delta) - f(x-delta)) / (2 * delta)
+
+
+# plot the function
+xs = np.arange(-10, 11)
+plt.plot(xs, f(xs))
+plt.show()
+
+learning_rate = 0.1
+max_loop = 30
+
+x_init = 10.0
+x = x_init
+lr = 0.1
+for i in range(max_loop):
+    # d_f_x = d_f_1(x)
+    d_f_x = d_f_2(f, x)
+    x = x - learning_rate * d_f_x
+    print(x)
+
+print('initial x =', x_init)
+print('arg min f(x) of x =', x)
+print('f(x) =', f(x))
+
+Ref： https://github.com/zlxy9892/ml_code/blob/master/basic_algorithm/gradient_descent/simple_gradient_descent.py
 
 9 学习L2-Norm，L1-Norm，L0-Norm
 

@@ -27,7 +27,7 @@ P(A∩B)=P(A|B)*P(B)
  
  在条件概率和全概率的基础上，很容易推导出贝叶斯公式：
  
- ![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/bayesian2.jpg)
+ ![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/betasian2.JPG)
 
 Ref: https://zhuanlan.zhihu.com/p/22467549
 

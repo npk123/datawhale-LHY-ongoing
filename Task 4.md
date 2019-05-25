@@ -53,12 +53,11 @@ P(Bi|A)是后验概率（也叫条件概率），是在A发生的情况下Bi发�
     2.预测结果受样本噪声的影响比较大。
 
 如下图所示
+
   ![equation1](https://github.com/npk123/Algorithm-datawhale/blob/master/images/Capture.JPG)
 
-1. 拟合函数和预测函数的关系，其实就是将拟合函数做了一个逻辑函数的转换。 
-
-2. 最小二乘和最大似然估计不可以相互替代。原理：最大似然估计是计算使得数据出现的可能性最大的参数，依仗的自然
-是Probability。而最小二乘是计算误差损失。
+    1. 拟合函数和预测函数的关系，其实就是将拟合函数做了一个逻辑函数的转换。 
+    2. 最小二乘和最大似然估计不可以相互替代。原理：最大似然估计是计算使得数据出现的可能性最大的参数，依仗的自然是Probability。而最小二乘是计算误差损失。
 
 区别：
 
@@ -73,3 +72,15 @@ P(Bi|A)是后验概率（也叫条件概率），是在A发生的情况下Bi发�
 logistic回归的因变量可以是二分类的，也可以是多分类的，但是二分类的更为常用，也更加容易解释。所以实际中最为常用的就是二分类的logistic回归。
 
 5. 推导sigmoid function公式
+
+数学上使用便是sigmoid函数(如下)：
+
+  ![equation1](https://github.com/npk123/Algorithm-datawhale/blob/master/images/sigmoid%20function.jpg)
+  
+logistic回归的核心思想是，如果线性回归的结果输出是一个连续值，而值的范围是无法限定的，那我们有没有办法把这个结果值映射为可以帮助我们判断的结果呢。而如果输出结果是 (0,1) 的一个概率值，这个问题就很清楚了。它的输入范围为−∞→+∞，而值域刚好为(0,1)，正好满足概率分布为(0,1)的要求。用概率去描述分类器，自然要比阈值要来的方便。
+
+而且它是一个单调上升的函数，具有良好的连续性，不存在不连续点。
+  
+ 其求导后为
+  
+  ![equation1](https://github.com/npk123/Algorithm-datawhale/blob/master/images/sigmoid'.jpg)

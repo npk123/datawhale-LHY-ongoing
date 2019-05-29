@@ -19,6 +19,8 @@
   ![equation1](https://github.com/npk123/Algorithm-datawhale/blob/master/images/%E4%B8%8B%E8%BD%BD1.png)
   
   ![equation1](https://github.com/npk123/Algorithm-datawhale/blob/master/images/%E4%B8%8B%E8%BD%BD2.png)
+  
+Ref: https://blog.csdn.net/ligang_csdn/article/details/53838743
 
 # 3. 利用代码描述梯度下降
 

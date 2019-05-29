@@ -127,3 +127,17 @@ https://datawhalechina.github.io/Leeml-Book/#/chapter8/chapter8
 http://note.youdao.com/noteshare?id=47ee5998b8abe6e51f3a587ba547bbdf&sub=A22B858671F84836A1BFA2CBC4F58284
 
 晚点给出参考链接，更多想把时间留给学习者，我所写的只是参考，希望大家有自己的想法
+
+# Task 5
+
+推导LR损失函数(1)
+
+学习LR梯度下降(2)
+
+利用代码描述梯度下降(选做)(3)
+
+Softmax原理(4)
+
+softmax损失函数(5)
+
+softmax梯度下降(6)

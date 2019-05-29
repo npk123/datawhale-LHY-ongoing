@@ -33,8 +33,33 @@ Softmax是Logistic回归在多分类上的推广，即类标签yy的取值大于
 其中θ表示的向量，且θi∈Rn+1。则对于每一个样本估计其所属的类别的概率为：
 
 ![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%202.JPG)
-  
+
+    scores = np.array([123, 456, 789])    # example with 3 classes and each having large scores
+    scores -= np.max(scores)    # scores becomes [-666, -333, 0]
+    p = np.exp(scores) / np.sum(np.exp(scores))
+
+Ref: https://blog.csdn.net/red_stone1/article/details/80687921
 
 # 5. softmax损失函数
 
+类似于Logistic回归，在Softmax的代价函数中引入指示函数I{⋅}，其具体形式为：
+
+![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%203.JPG)
+
+那么，对于Softmax回归的代价函数为：
+
+![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%204.JPG)
+
 # 6. softmax梯度下降
+
+对于上述的代价函数，可以使用梯度下降法对其进行求解，首先对其进行求梯度：
+
+![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%205.JPG)
+
+最终的结果为：
+
+![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%206.JPG)
+
+注意，此处的θj表示的是一个向量。通过梯度下降法的公式可以更新：
+
+![equation1](https://github.com/npk123/datawhale-LHY-ongoing/blob/master/pics/softmax%207.JPG)
